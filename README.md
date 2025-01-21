@@ -7,6 +7,18 @@ We are going to do the 3 actions
 Create a SparkSession, Create a DataFrame and Print the DataFrame
 
 
+from pyspark.sql import SparkSession
+
+ # Create a SparkSession
+ spark = SparkSession.builder.appName("PySparkApp").getOrCreate()
+
+ # Create a DataFrame
+ data = [("Mustang","GT350",1997, 100000), ("BMW","X4",2010, 250000), ("Porsche","C911",1990, 180000)]
+
+ df = spark.createDataFrame(data, ["Brand", "Model", "Year", "Price"])
+
+ # Print the DataFrame
+ df.show() 
   
 
 
